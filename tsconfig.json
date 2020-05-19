@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "./src",
+    "allowUmdGlobalAccess": true,
+    "target": "ES2019",
+    "noImplicitAny": true,
+    "paths": {
+      "pages/*": ["pages/*"],
+      "hooks/*": ["hooks/*"],
+      "components/*": ["components/*"]
+    }
+  }
+}

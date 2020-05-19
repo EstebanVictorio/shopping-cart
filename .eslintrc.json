@@ -1,0 +1,28 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "strict": ["error", "never"],
+    "semi": ["error", "never"]
+  },
+  "extends": ["eslint:recommended"],
+  "plugins": ["plugin:react-recommended", "react-hooks"],
+  "overrides": [
+    {
+      "files": "**/*.+(ts|tsx)",
+      "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "eslint-config-prettier/@typescript-eslint"
+      ],
+      "plugins": ["@typescript-eslint/eslint-plugin"]
+    }
+  ]
+}
