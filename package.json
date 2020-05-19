@@ -35,7 +35,8 @@
     "format": "yarn prettier --write",
     "check-format": "yarn prettier --list-different",
     "lint": "eslint --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\""
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
+    "validate": "npm-run-all --parallel check-types check-format lint"
   },
   "dependencies": {
     "@emotion/core": "10.0.28",
