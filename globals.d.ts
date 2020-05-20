@@ -1,4 +1,5 @@
 /// <reference types="react" />
 /// <reference types="react-dom" />
-declare var React: typeof React
-declare var ReactDOM: typeof ReactDOM
+/*  eslint-disable */
+declare let React: typeof React
+declare let ReactDOM: typeof ReactDOM

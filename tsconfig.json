@@ -2,13 +2,16 @@
   "compilerOptions": {
     "jsx": "react",
     "baseUrl": "./src",
-    "allowUmdGlobalAccess": true,
     "target": "ES2019",
     "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "allowUmdGlobalAccess": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "pages/*": ["pages/*"],
       "hooks/*": ["hooks/*"],
       "components/*": ["components/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

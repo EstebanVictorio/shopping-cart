@@ -1,2 +1,2 @@
-const config = require("./webpack")
+const config = require('./webpack')
 module.exports = config

@@ -1,3 +1,5 @@
 {
-  "pre-commit": "yarn validate && node test.js"
+  "hooks": {
+    "pre-commit": "yarn validate"
+  }
 }

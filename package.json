@@ -11,9 +11,11 @@
     "@types/react-dom": "16.9.8",
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "2.33.0",
+    "babel-eslint": "10.1.0",
     "dotenv": "8.2.0",
     "eslint": "7.0.0",
     "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-json": "2.1.1",
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "4.0.2",
     "html-webpack-plugin": "4.3.0",
@@ -30,7 +32,7 @@
     "webpack-jarvis": "0.3.2"
   },
   "scripts": {
-    "check-types": "tsc",
+    "check-types": "tsc --project tsconfig.dev.json",
     "dev": "webpack-dev-server",
     "format": "yarn prettier --write",
     "check-format": "yarn prettier --list-different",

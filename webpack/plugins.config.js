@@ -1,6 +1,6 @@
-const path = require("path")
-const HWP = require("html-webpack-plugin")
-const { ProvidePlugin } = require("webpack")
+const path = require('path')
+const HWP = require('html-webpack-plugin')
+const { ProvidePlugin } = require('webpack')
 
 const projectDir = path.resolve(__dirname)
 
@@ -19,6 +19,5 @@ const plugins = [
   new HWP(baseHtmlConfig),
   new ProvidePlugin(providePluginConfig),
 ]
-
 
 module.exports = plugins

@@ -1,5 +1,5 @@
 {
-  "parser": "@typescript-eslint/parser",
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module"
@@ -10,12 +10,18 @@
   },
   "rules": {
     "strict": ["error", "never"],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "react/react-in-jsx-scope": "off"
   },
-  "extends": ["eslint:recommended"],
-  "plugins": ["plugin:react-recommended", "react-hooks"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:json/recommended"
+  ],
+  "plugins": ["react-hooks"],
   "overrides": [
     {
+      "parser": "@typescript-eslint/parser",
       "files": "**/*.+(ts|tsx)",
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended",
@@ -24,5 +30,10 @@
       ],
       "plugins": ["@typescript-eslint/eslint-plugin"]
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "16.13"
+    }
+  }
 }
