@@ -10,7 +10,13 @@
     "paths": {
       "pages/*": ["pages/*"],
       "hooks/*": ["hooks/*"],
-      "components/*": ["components/*"]
+      "store/*": ["store/*"],
+      "sagas/*": ["sagas/*"],
+      "actions/*": ["actions/*"],
+      "services/*": ["services/*"],
+      "reducers/*": ["reducers/*"],
+      "components/*": ["components/*"],
+      "action-creators/*": ["action-creators/*"]
     }
   },
   "exclude": ["node_modules"]
