@@ -1,27 +1,40 @@
-import { FC, ReactElement } from 'react'
 import { connect } from 'react-redux'
+import { getGames } from 'selectors/games'
 import StoreState from 'reducers/state-composition'
+import { FC, useCallback, ReactElement } from 'react'
+import { fetchGames } from 'action-creators/services'
+import { Action as ServiceAction } from 'reducers/state-composition/services'
 import { Game } from 'reducers/state-composition/games'
 
 interface SelectorPropTypes {
-  games?: Array<Game>
+  gameList?: Array<Game>
+  fetchGames?: () => ServiceAction
 }
 
 type PropTypes = SelectorPropTypes
 
-const Home: FC<PropTypes> = ({ games }): ReactElement =>
-  (games && games.length && (
-    <ul>
-      {games.map(({ id, name }) => (
-        <li key={id}>{name}</li>
-      ))}
-    </ul>
-  )) || <span>{games ? 'No games' : 'Prop value unknown'}</span>
+const Home: FC<PropTypes> = ({ gameList, fetchGames }): ReactElement => {
+  const handleClick = useCallback(() => fetchGames(), [fetchGames])
+  return (
+    <div>
+      <input type='button' onClick={handleClick} value='Fetch games!' />
+      {(gameList && gameList.length && (
+        <ul>
+          {gameList.map(({ id, name }) => (
+            <li key={id}>{name}</li>
+          ))}
+        </ul>
+      )) || <span>{gameList ? 'No games' : 'Prop value unknown'}</span>}
+    </div>
+  )
+}
 
-const mapStateToProps = ({
-  games: { games },
-}: StoreState): SelectorPropTypes => ({
-  games,
+const mapStateToProps = (state: StoreState): SelectorPropTypes => ({
+  gameList: getGames(state),
 })
 
-export default connect(mapStateToProps)(Home)
+const mapDispatchToProps = {
+  fetchGames,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

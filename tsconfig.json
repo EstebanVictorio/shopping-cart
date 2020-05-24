@@ -3,7 +3,7 @@
     "jsx": "react",
     "baseUrl": "./src",
     "target": "ES2019",
-    "noImplicitAny": true,
+    "declaration": true,
     "moduleResolution": "Node",
     "allowUmdGlobalAccess": true,
     "allowSyntheticDefaultImports": true,
@@ -12,9 +12,12 @@
       "hooks/*": ["hooks/*"],
       "store/*": ["store/*"],
       "sagas/*": ["sagas/*"],
+      "utils/*": ["utils/*"],
+      "consts": ["consts.ts"],
       "actions/*": ["actions/*"],
       "services/*": ["services/*"],
       "reducers/*": ["reducers/*"],
+      "selectors/*": ["selectors/*"],
       "components/*": ["components/*"],
       "action-creators/*": ["action-creators/*"]
     }

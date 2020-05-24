@@ -18,13 +18,13 @@ const devConfig = {
   plugins: devPlugins,
 }
 
-const getComposedConfig = (options, contentBase) => ({
+const getComposedConfig = (options, contentBase, additionalPlugins = []) => ({
   ...options,
   devServer: {
     ...devServer,
     contentBase,
   },
-  plugins: devPlugins,
+  plugins: [...devPlugins, ...additionalPlugins],
 })
 
 module.exports = {
