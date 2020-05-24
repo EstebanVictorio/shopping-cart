@@ -1,4 +1,3 @@
-import { ServiceState } from 'services'
 import { Action as ReduxAction } from 'redux'
 
 export interface Game {
@@ -13,8 +12,8 @@ export interface Publisher {
 }
 
 export interface ActionPayload {
-  games?: Array<Game>
-  publishers?: Array<Publisher>
+  gameList?: Array<Game>
+  publisherList?: Array<Publisher>
 }
 
 export interface Action extends ReduxAction {
@@ -25,7 +24,6 @@ export interface Action extends ReduxAction {
 export interface ReducerState {
   page: number
   maxPage: number
-  games: Array<Game>
-  publishers: Array<Publisher>
-  serviceState: ServiceState
+  gameList: Array<Game>
+  publisherList: Array<Publisher>
 }

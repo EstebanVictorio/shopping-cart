@@ -4,7 +4,8 @@ const plugins = require('./plugins.config')
 const { composeResolve } = require('./resolve.config')
 const projectDir = path.resolve(__dirname)
 const root = path.resolve(__dirname, '../', './src')
-dotenv.config({ path: `${projectDir}/../` })
+
+dotenv.config()
 
 /** @type {webpack.Configuration} */
 let config = {
