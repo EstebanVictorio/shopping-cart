@@ -1,7 +1,11 @@
-import { FETCH_GAMES } from 'actions/services'
+import { FETCH_GAMES, FETCH_GAMES_ENDED } from 'actions/services'
 
 const fetchGames = () => ({
   type: FETCH_GAMES,
 })
 
-export { fetchGames }
+const fetchGamesEnded = () => ({
+  type: FETCH_GAMES_ENDED,
+})
+
+export { fetchGames, fetchGamesEnded }

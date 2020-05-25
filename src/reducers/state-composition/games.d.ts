@@ -4,6 +4,7 @@ export interface Game {
   id: string
   name: string
   publisher: Publisher
+  backgroundImage: string
 }
 
 export interface Publisher {
